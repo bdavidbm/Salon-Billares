@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="{{ url('/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
-    <title>Video Club</title>
+    <title>Salon Billares</title>
   </head>
   <body>
     @include('partials.navbar')
