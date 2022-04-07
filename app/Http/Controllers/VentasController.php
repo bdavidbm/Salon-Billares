@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\sale;
 use Illuminate\Http\Request;
 
 class VentasController extends Controller
 {
     public function getIndex(){
-        return view('ventas.index');
+        $arrayVenta=sale::all();
+        return view('ventas.index', compact('arrayVenta'));
     }
 
     public function getShow($id){
-        return view('ventas.show', array('id'=>$id));
+        $venta=sale::findOrFail($id);
+        return view('ventas.show', compact('venta'));
     }
 }

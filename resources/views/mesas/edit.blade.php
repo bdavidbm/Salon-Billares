@@ -1,29 +1,4 @@
 @extends('layouts.master')
-<?php
-    $arrayMesa=array(
-        array(
-            'descripcion' => '1',
-            'precio' => '250',
-            'minuto' => '5'
-        ),
-        array(
-            'descripcion' => '2',
-            'precio' => '250',
-            'minuto' => '5'
-        ),
-        array(
-            'descripcion' => '3',
-            'precio' => '250',
-            'minuto' => '5'
-        ),
-        array(
-            'descripcion' => '4',
-            'precio' => '250',
-            'minuto' => '5'
-        ),
-    );
-    $mesa = $arrayMesa[$id];
-?>
 
 @section('content')
 <div class="row" style="margin-top:40px">
@@ -46,13 +21,13 @@
                                     <div class="form-group">
                                         <tr>
                                             <th><label for="precio">Precio: </label></th>
-                                            <th><input type="number" name="precio" class="form-control" placeholder="{{$mesa['precio']}}"></th>
+                                            <th><input type="number" name="precio" class="form-control" placeholder="{{$mesa['presio']}}"></th>
                                         </tr>
                                     </div>
                                     <div class="form-group">
                                         <tr>
                                             <th><label for="minuto">Minutos por Precio: </label></th>
-                                            <th><input type="number" name="precio" class="form-control" placeholder="{{$mesa['minuto']}}"></th>
+                                            <th><input type="number" name="precio" class="form-control" placeholder="{{$mesa['minutos_presio']}}"></th>
                                         </tr>
                                     </div>
                                     <div class="form-group">

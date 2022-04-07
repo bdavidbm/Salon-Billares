@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\game;
 use Illuminate\Http\Request;
 
 class MesasController extends Controller
 {
     public function getIndex(){
-        return view('mesas.index');
+        $arrayMesa=game::all();
+        return view('mesas.index', compact('arrayMesa'));
     }
 
     public function getCreate(){
@@ -15,10 +17,12 @@ class MesasController extends Controller
     }
 
     public function getShow($id){
-        return view('mesas.show', array('id'=>$id));
+        $mesa=game::findOrFail($id);
+        return view('mesas.show', compact('mesa'));
     }
 
     public function getEdit($id){
-        return view('mesas.edit', array('id'=>$id));
+        $mesa=game::findOrFail($id);
+        return view('mesas.edit', compact('mesa'));
     }
 }

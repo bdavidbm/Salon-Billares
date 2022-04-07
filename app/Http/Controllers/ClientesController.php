@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\client;
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
 {
     public function getIndex(){
-        return view('clientes.index');
+        $arrayCliente=client::all();
+        return view('clientes.index', compact('arrayCliente'));
     }
 
     public function getCreate(){
@@ -15,10 +17,12 @@ class ClientesController extends Controller
     }
 
     public function getShow($id){
-        return view('clientes.show', array('id'=>$id));
+        $cliente=client::findOrFail($id);
+        return view('clientes.show', compact('cliente'));
     }
 
     public function getEdit($id){
-        return view('clientes.edit', array('id'=>$id));
+        $cliente=client::findOrFail($id);
+        return view('clientes.edit', compact('cliente'));
     }
 }
